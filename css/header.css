@@ -1,0 +1,124 @@
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      color-mix(in srgb, var(--light-green) 80%, transparent),
+      color-mix(in srgb, var(--dark-green) 80%, transparent)
+    ),
+    url('/img/hero.jpg');
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  background-size: cover;
+  background-position: top;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  height: 35px;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo:hover {
+  animation: moveToLeft 1s ease-out;
+  backface-visibility: hidden;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.heading-primary {
+  display: block;
+  font-size: 60px;
+  letter-spacing: 35px;
+  font-weight: 400;
+
+  animation-name: moveToRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  backface-visibility: hidden;
+}
+
+.heading-secondary {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 17.5px;
+  font-weight: 700;
+
+  animation: moveToLeft 1s ease-out;
+  backface-visibility: hidden;
+}
+
+.btn:link,
+.btn:visited {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.17);
+}
+
+.btn-white {
+  background-color: white;
+  color: var(--gray);
+}
+
+.btn-white::after {
+  background-color: white;
+  opacity: 0.2;
+  filter: blur(5px);
+}
+
+.btn:hover::after {
+  opacity: 0;
+  transform: scaleX(1.5) scaleY(2);
+  filter: blur(8px);
+}
+
+.btn.animated {
+  animation: moveToTop 0.4s ease-out 1s;
+  animation-fill-mode: backwards;
+}
